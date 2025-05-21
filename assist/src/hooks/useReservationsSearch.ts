@@ -53,13 +53,13 @@ export function useReservationsSearch(): UseReservationsSearchResult {
     [debouncedPasajero, debouncedReserva, currentPage, pageSize] // Dependencias para re-fetch automático
   );
 
-  // Opcional: Reiniciar la página a 1 cuando cambian los términos de búsqueda
+  // Reiniciar la página a 1 solo cuando cambian los términos de búsqueda
   useEffect(() => {
-    // Solo si el debouncedPasajero o debouncedReserva cambian y no estamos en la página 1
-    if (currentPage !== 1 && (debouncedPasajero !== searchParams.pasajero || debouncedReserva !== searchParams.reserva)) {
-        setCurrentPage(1);
+    // Solo resetear cuando cambian los términos de búsqueda, no cuando cambia la página
+    if (debouncedPasajero || debouncedReserva) {
+      setCurrentPage(1);
     }
-  }, [debouncedPasajero, debouncedReserva, currentPage]);
+  }, [debouncedPasajero, debouncedReserva]); // Quitamos currentPage de las dependencias
 
 
   return {

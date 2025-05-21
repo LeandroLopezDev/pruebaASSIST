@@ -60,7 +60,7 @@ export const ReservationsFeature: React.FC = () => {
                     <Pagination
                     totalItems={reservations.total}
                     itemsPerPage={reservations.pageSize}
-                    currentPage={reservations.page}
+                    currentPage={currentPage}
                     onPageChange={setCurrentPage} // El hook ya manejará la lógica de re-fetch
                     />
                 </>

@@ -21,7 +21,7 @@ export async function getReservations( params: ReservationSearchParams = {} ): P
   );
 
   // Realiza la llamada GET a la API usando la instancia de Axios y el wrapper safeApiCall
-  // La URL completa será: API_BASE_URL + '/dev/reservasHandler'
+  // La URL completa será: API_BASE_URL + '/reservasHandler'
   const response = await safeApiCall(api.get<ReservationsApiResponse>('/reservasHandler', { params: cleanedParams }));
   
   return {

@@ -4,7 +4,7 @@ import type { CustomError } from './types.d'; // Importamos el tipo de error que
  // Importamos el tipo de error que definimos
 
 // URL Base de la API proporcionada en el desafío
-const API_BASE_URL = 'https://3cccfrjulc8.execute-api.us-west-1.amazonaws.com/dev';
+const API_BASE_URL = 'https://3ccfrjulc8.execute-api.us-west-1.amazonaws.com/dev';
 
 // Crear una instancia de Axios
 const api: AxiosInstance = axios.create({
