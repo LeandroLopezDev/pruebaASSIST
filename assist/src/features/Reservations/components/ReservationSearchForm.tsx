@@ -23,30 +23,38 @@ export const ReservationSearchForm: React.FC<ReservationSearchFormProps> = ({
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <Input
-          id="pasajeroSearch"
-          label="Buscar por Pasajero"
-          type="text"
-          placeholder="Nombre o apellido del pasajero"
-          value={pasajeroSearch}
-          onChange={(e) => onPasajeroChange(e.target.value)}
-        />
-        <Input
-          id="reservaSearch"
-          label="Buscar por Número de Reserva"
-          type="text"
-          placeholder="Número de reserva (AX321)"
-          value={reservaSearch}
-          onChange={(e) => onReservaChange(e.target.value)}
-        />
+    <div 
+      className="bg-[url('public/BG-ASSIST.jpg')] bg-cover bg-center rounded-md"
+    >
+      <div className="bg-opacity-50">
+        <form onSubmit={handleSubmit} className="px-8 pt-6 pb-8 mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Input
+              className='bg-white'
+              id="pasajeroSearch"
+              label="Buscar por Pasajero"
+              type="text"
+              placeholder="Nombre o apellido del pasajero"
+              value={pasajeroSearch}
+              onChange={(e) => onPasajeroChange(e.target.value)}
+            />
+            <Input
+              className='bg-white'
+              id="reservaSearch"
+              label="Buscar por Número de Reserva"
+              type="text"
+              placeholder="Número de reserva (AX321)"
+              value={reservaSearch}
+              onChange={(e) => onReservaChange(e.target.value)}
+            />
+          </div>
+          <div className="flex items-center justify-end mt-4">
+            <Button type="submit" variant='primary'>
+              Buscar Reservas
+            </Button>
+          </div>
+        </form>
       </div>
-      <div className="flex items-center justify-end">
-        <Button type="submit">
-          Buscar Reservas
-        </Button>
-      </div>
-    </form>
+    </div>
   );
 };

@@ -1,7 +1,6 @@
 import axios from 'axios';
 import type { AxiosInstance, AxiosError } from 'axios';
 import type { CustomError } from './types.d'; // Importamos el tipo de error que definimos
- // Importamos el tipo de error que definimos
 
 // URL Base de la API proporcionada en el desafío
 const API_BASE_URL = 'https://3ccfrjulc8.execute-api.us-west-1.amazonaws.com/dev';
@@ -55,9 +54,6 @@ export async function safeApiCall<T>(
         // Algo sucedió al configurar la solicitud que disparó un Error
         customError.message = axiosError.message || 'Error al configurar la solicitud.';
       }
-  
-      // Puedes agregar lógica adicional aquí, como loguear el error o disparar un Toast notification global
-      console.error('API Call Error:', customError);
   
       return { data: undefined, error: customError };
     }

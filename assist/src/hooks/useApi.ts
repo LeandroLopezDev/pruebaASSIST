@@ -36,10 +36,9 @@ export function useApi<T, P = any>( // P es el tipo de los parámetros que recib
   
       // Usar los parámetros pasados a fetchData, o los del ref, o los iniciales
       const paramsToUse = paramsOverride !== undefined ? paramsOverride : currentParamsRef.current;
-  
+
       try {
         const result = await apiCallFn(paramsToUse);
-  
         if (result.error) {
           setError(result.error);
           setData(undefined);
@@ -64,6 +63,7 @@ export function useApi<T, P = any>( // P es el tipo de los parámetros que recib
       // Actualizar el ref de parámetros si initialParams o las dependencias cambian
       currentParamsRef.current = initialParams;
       fetchData(initialParams); // Dispara la carga inicial con los initialParams
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, dependencies); // Solo usamos las dependencias explícitas pasadas al hook
   
     return { data, isLoading, error, fetchData };
