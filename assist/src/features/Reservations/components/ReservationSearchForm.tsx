@@ -24,7 +24,7 @@ export const ReservationSearchForm: React.FC<ReservationSearchFormProps> = ({
 
   return (
     <div 
-      className="bg-[url('public/BG-ASSIST.jpg')] bg-cover bg-center rounded-md"
+       className="bg-[url('/BG-ASSIST.jpg')] bg-cover bg-center rounded-md"
     >
       <div className="bg-opacity-50">
         <form onSubmit={handleSubmit} className="px-8 pt-6 pb-8 mb-4">
